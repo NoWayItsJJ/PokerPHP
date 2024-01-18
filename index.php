@@ -3,42 +3,27 @@
 // Creazione del mazzo
 function creaMazzo() {
     $semi = array('Cuori', 'Quadri', 'Fiori', 'Picche');
-    $valori = array('2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Regina', 'Re', 'Asso');
+    $valori = array('2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A');
     $mazzo = array();
 
     foreach ($semi as $seme) {
         foreach ($valori as $valore) {
-            $mazzo[] = $valore . ' di ' . $seme;
+            $carta = $valore . ' di ' . $seme;
+            $immagine = str_replace('', '_', strtolower($valore . '_' . $seme)) . '.gif';
+            $mazzo[$carta] = $immagine;
         }
     }
-
-    return $mazzo;
-}
-
-// Rimescolamento del mazzo
-function rimescolaMazzo($mazzo) {
     shuffle($mazzo);
-    return $mazzo;
-}
 
-// Funzione per stampare le carte nel mazzo
-function stampaMazzo($mazzo) {
-    foreach ($mazzo as $carta) {
-        echo $carta . "<br>";
-    }
+    return $mazzo;
 }
 
 // Creazione del mazzo
 $mazzo = creaMazzo();
 
-echo "Mazzo iniziale:<br>";
-stampaMazzo($mazzo);
-
-// Rimescolamento del mazzo
-$mazzoRimescolato = rimescolaMazzo($mazzo);
-
-echo "<br>Mazzo rimescolato:<br>";
-stampaMazzo($mazzoRimescolato);
+foreach($mazzo as $carta => $immagine) {
+    echo "$carta: $immagine<br>";
+}
 
 ?>
 
