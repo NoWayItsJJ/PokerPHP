@@ -1,75 +1,94 @@
 <?php
-
-// Creazione del mazzo
-function creaMazzo() {
-    $semi = array('Cuori', 'Quadri', 'Fiori', 'Picche');
-    $valori = array('2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A');
+function generaMazzo() {
+    $semi = array("cuori", "quadri", "fiori", "picche");
+    $valori = array("2", "3", "4", "5", "6", "7", "8", "9", "10", "j", "q", "k", "a");
     $mazzo = array();
 
-    foreach ($semi as $seme) {
+    for ($i = 0; $i < 2; $i++) {
         foreach ($valori as $valore) {
-            $carta = $valore . ' di ' . $seme;
-            $immagine = str_replace('', '_', strtolower($valore . '_' . $seme)) . '.gif';
-            $mazzo[$carta] = $immagine;
+            foreach ($semi as $seme) {
+                $carta = $valore . '_' . $seme . ".gif";
+                $mazzo[] = $carta;
+            }
         }
     }
-    shuffle($mazzo);
 
+    shuffle($mazzo);
     return $mazzo;
 }
 
-// Creazione del mazzo
-$mazzo = creaMazzo();
-
-foreach($mazzo as $carta => $immagine) {
-    echo "$carta: $immagine<br>";
+function pescaCarta(&$mazzo) {
+    return array_shift($mazzo);
 }
+
+$mazzoGioco = generaMazzo();
+
+$carteGiocatore1 = array(pescaCarta($mazzoGioco), pescaCarta($mazzoGioco));
+$carteGiocatore2 = array(pescaCarta($mazzoGioco), pescaCarta($mazzoGioco));
+$carteGiocatore3 = array(pescaCarta($mazzoGioco), pescaCarta($mazzoGioco));
+$carteGiocatore4 = array(pescaCarta($mazzoGioco), pescaCarta($mazzoGioco));
+
+$carteTavolo = array();
+for ($i = 0; $i < 5; $i++) {
+    $carteTavolo[] = pescaCarta($mazzoGioco);
+}
+
+
 
 ?>
 
+<!DOCTYPE html>
 <html>
     <head>
-        <title>POKERINHO</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styles.css" />
+        <title>Pauletta Poker</title>
     </head>
     <body>
         <div class="container">
-            <div class="up_container">
+            <div class="up-container">
                 <div class="mazzo">
-                    <h1>MAZZO</h1>
+                    <div class="titlemazzo"><h1>MAZZO</h1></div>
+                    <div class="cartamazzo"><img src="./carte/back.gif" alt="" /></div>
                 </div>
-                <div class="tavolo"></div>
+                <div class="tavolo">
+                    <div class="cartetavolo">
+                        <?php foreach ($carteTavolo as $carta) : ?>
+                            <div class="carta"><img src="./carte/<?php echo $carta; ?>" alt="" /></div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
             </div>
-            <div class="down_container">
+            <div class="down-container">
                 <div class="giocatore">
-                    <div class="nomeGiocatore"><h1>GIOCATORE 1</h1></div>
+                    <div class="nomegiocatore"><h1>GIOCATORE 1</h1></div>
                     <div class="carte">
-                        <div class="carta"></div>
-                        <div class="carta"></div>
+                        <div class="carta"><img src="./carte/<?php echo $carteGiocatore1[0]; ?>" alt="" /></div>
+                        <div class="carta"><img src="./carte/<?php echo $carteGiocatore1[1]; ?>" alt="" /></div>
                     </div>
                 </div>
                 <div class="giocatore">
-                    <div class="nomeGiocatore"><h1>GIOCATORE 2</h1></div>
+                    <div class="nomegiocatore"><h1>GIOCATORE 2</h1></div>
                     <div class="carte">
-                        <div class="carta"></div>
-                        <div class="carta"></div>
+                        <div class="carta"><img src="./carte/<?php echo $carteGiocatore2[0]; ?>" alt="" /></div>
+                        <div class="carta"><img src="./carte/<?php echo $carteGiocatore2[1]; ?>" alt="" /></div>
                     </div>
                 </div>
                 <div class="giocatore">
-                    <div class="nomeGiocatore"><h1>GIOCATORE 3</h1></div>
+                    <div class="nomegiocatore"><h1>GIOCATORE 3</h1></div>
                     <div class="carte">
-                        <div class="carta"></div>
-                        <div class="carta"></div>
+                        <div class="carta"><img src="./carte/<?php echo $carteGiocatore3[0]; ?>" alt="" /></div>
+                        <div class="carta"><img src="./carte/<?php echo $carteGiocatore3[1]; ?>" alt="" /></div>
                     </div>
                 </div>
                 <div class="giocatore">
-                    <div class="nomeGiocatore"><h1>GIOCATORE 4</h1></div>
+                    <div class="nomegiocatore"><h1>GIOCATORE 4</h1></div>
                     <div class="carte">
-                        <div class="carta"></div>
-                        <div class="carta"></div>
+                        <div class="carta"><img src="./carte/<?php echo $carteGiocatore4[0]; ?>" alt="" /></div>
+                        <div class="carta"><img src="./carte/<?php echo $carteGiocatore4[1]; ?>" alt="" /></div>
                     </div>
                 </div>
             </div>
         </div>
+        <?php //echo "<h3>Vincitore: " . $vincitore . "</h3>"; ?>
     </body>
 </html>
