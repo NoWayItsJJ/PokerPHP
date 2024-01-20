@@ -60,28 +60,28 @@ for ($i = 0; $i < 5; $i++) {
             </div>
             <div class="down-container">
                 <div class="giocatore">
-                    <div class="nomegiocatore"><h1>GIOCATORE 1</h1></div>
+                    <div class="nomegiocatore"><h1>PLAYER 1</h1></div>
                     <div class="carte">
                         <div class="carta"><img src="./carte/<?php echo $carteGiocatore1[0]; ?>" alt="" /></div>
                         <div class="carta"><img src="./carte/<?php echo $carteGiocatore1[1]; ?>" alt="" /></div>
                     </div>
                 </div>
                 <div class="giocatore">
-                    <div class="nomegiocatore"><h1>GIOCATORE 2</h1></div>
+                    <div class="nomegiocatore"><h1>PLAYER 2</h1></div>
                     <div class="carte">
                         <div class="carta"><img src="./carte/<?php echo $carteGiocatore2[0]; ?>" alt="" /></div>
                         <div class="carta"><img src="./carte/<?php echo $carteGiocatore2[1]; ?>" alt="" /></div>
                     </div>
                 </div>
                 <div class="giocatore">
-                    <div class="nomegiocatore"><h1>GIOCATORE 3</h1></div>
+                    <div class="nomegiocatore"><h1>PLAYER 3</h1></div>
                     <div class="carte">
                         <div class="carta"><img src="./carte/<?php echo $carteGiocatore3[0]; ?>" alt="" /></div>
                         <div class="carta"><img src="./carte/<?php echo $carteGiocatore3[1]; ?>" alt="" /></div>
                     </div>
                 </div>
                 <div class="giocatore">
-                    <div class="nomegiocatore"><h1>GIOCATORE 4</h1></div>
+                    <div class="nomegiocatore"><h1>PLAYER 4</h1></div>
                     <div class="carte">
                         <div class="carta"><img src="./carte/<?php echo $carteGiocatore4[0]; ?>" alt="" /></div>
                         <div class="carta"><img src="./carte/<?php echo $carteGiocatore4[1]; ?>" alt="" /></div>
