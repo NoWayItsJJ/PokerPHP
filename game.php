@@ -6,6 +6,21 @@ if(!isset($_SESSION['email']) || !isset($_SESSION['password']) || !isset($_SESSI
 
 $id = $_SESSION['id_utente'];
 
+$servername = "localhost";
+$username = "root"; //Sostituisci con il tuo nome utente del database
+$password = ""; //Sostituisci con la tua password del database
+$dbname = "pauletta_poker"; //Sostituisci con il nome del tuo database
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verifica della connessione
+if ($conn->connect_error)
+{
+    die("Connessione fallita: " . $conn->connect_error);
+}
+
+$users = array();
+
 function generaMazzo() {
     $semi = array("cuori", "quadri", "fiori", "picche");
     $valori = array("2", "3", "4", "5", "6", "7", "8", "9", "10", "j", "q", "k", "a");
