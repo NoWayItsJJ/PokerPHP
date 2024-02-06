@@ -34,6 +34,7 @@ html {
 	flex-direction: row;
 	text-align: left;
 	padding: 20px;
+	margin-top: 12px;
 }
 
 .down-container {
