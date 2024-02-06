@@ -54,9 +54,6 @@ $carteTavolo = array();
 for ($i = 0; $i < 5; $i++) {
     $carteTavolo[] = pescaCarta($mazzoGioco);
 }
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -87,29 +84,29 @@ for ($i = 0; $i < 5; $i++) {
                 <div class="giocatore">
                     <div class="nomegiocatore"><h1>PLAYER 1</h1></div>
                     <div class="carte">
-                        <div class="carta"><img src="./carte/<?php echo ($id === 1) ? $carteGiocatore1[0] : "back.gif"; ?>" /></div>
-                        <div class="carta"><img src="./carte/<?php echo ($id === 1) ? $carteGiocatore1[1] : "back.gif"; ?>" /></div>
+                        <div class="carta"><img src="./carte/<?php echo $carteGiocatore1[0]; //($id === 1) ? $carteGiocatore1[0] : "back.gif"; ?>" /></div>
+                        <div class="carta"><img src="./carte/<?php echo $carteGiocatore1[1]; //($id === 1) ? $carteGiocatore1[1] : "back.gif"; ?>" /></div>
                     </div>
                 </div>
                 <div class="giocatore">
                     <div class="nomegiocatore"><h1>PLAYER 2</h1></div>
                     <div class="carte">
-                        <div class="carta"><img src="./carte/<?php echo ($id === 2) ? $carteGiocatore2[0] : "back.gif"; ?>" /></div>
-                        <div class="carta"><img src="./carte/<?php echo ($id === 2) ? $carteGiocatore2[1] : "back.gif"; ?>" /></div>
+                        <div class="carta"><img src="./carte/<?php echo $carteGiocatore2[0]; //($id === 2) ? $carteGiocatore2[0] : "back.gif"; ?>" /></div>
+                        <div class="carta"><img src="./carte/<?php echo $carteGiocatore2[1]; //($id === 2) ? $carteGiocatore2[1] : "back.gif"; ?>" /></div>
                     </div>
                 </div>
                 <div class="giocatore">
                     <div class="nomegiocatore"><h1>PLAYER 3</h1></div>
                     <div class="carte">
-                        <div class="carta"><img src="./carte/<?php echo ($id === 3) ? $carteGiocatore3[0] : "back.gif"; ?>" /></div>
-                        <div class="carta"><img src="./carte/<?php echo ($id === 3) ? $carteGiocatore3[1] : "back.gif"; ?>" /></div>
+                        <div class="carta"><img src="./carte/<?php echo $carteGiocatore3[0]; //($id === 3) ? $carteGiocatore3[0] : "back.gif"; ?>" /></div>
+                        <div class="carta"><img src="./carte/<?php echo $carteGiocatore3[1]; //($id === 3) ? $carteGiocatore3[1] : "back.gif"; ?>" /></div>
                     </div>
                 </div>
                 <div class="giocatore">
                     <div class="nomegiocatore"><h1>PLAYER 4</h1></div>
                     <div class="carte">
-                        <div class="carta"><img src="./carte/<?php echo ($id === 4) ? $carteGiocatore4[0] : "back.gif"; ?>" /></div>
-                        <div class="carta"><img src="./carte/<?php echo ($id === 4) ? $carteGiocatore4[1] : "back.gif"; ?>" /></div>
+                        <div class="carta"><img src="./carte/<?php echo $carteGiocatore4[0]; //($id === 4) ? $carteGiocatore4[0] : "back.gif"; ?>" /></div>
+                        <div class="carta"><img src="./carte/<?php echo $carteGiocatore4[1]; //($id === 4) ? $carteGiocatore4[1] : "back.gif"; ?>" /></div>
                     </div>
                 </div>
             </div>
