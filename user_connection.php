@@ -21,7 +21,7 @@
         <h2>Inserisci il tuo budget:</h2>
 
         <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-            <div class="user-box"><input type="number" name="budget" required><label>Budget</label></div>
+            <div class="user-box"><input type="number" name="budget" required autofocus><label>Budget</label></div>
             <input class="submit" type="submit" value="Conferma">
         </form>
     </div>
