@@ -12,7 +12,25 @@ html {
 
 .up-container {
 	width: 98vw;
-	height: 49vh;
+	height: 45vh;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	text-align: center;
+}
+
+.down-container {
+	width: 98vw;
+	height: 45vh;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	text-align: center;
+}
+
+.bottom-container {
+	width: 98vw;
+	height: 8vh;
 	display: flex;
 	justify-content: center;
 	flex-direction: row;
@@ -35,15 +53,6 @@ html {
 	text-align: left;
 	padding: 20px;
 	margin-top: 12px;
-}
-
-.down-container {
-	width: 98vw;
-	height: 49vh;
-	display: flex;
-	justify-content: center;
-	flex-direction: row;
-	text-align: center;
 }
 
 .giocatore {
@@ -138,4 +147,53 @@ input[type="button"][name="logout"] {
 
 input[type="button"][name="logout"]:hover {
 	background: #d32f2f;
+}
+
+.bottom-center {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.bottom-side {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+/* Stili per il pulsante di action */
+input[type="button"][name="action"] {
+	margin-right: 30px;
+	margin-left: 30px;
+	padding: 20px;
+	height: 80%;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+	background: #758191;
+	color: #ffffff;
+	font-size: 20px;
+	transition: all 0.3s ease;
+	transform: translate(20px, 0);
+}
+
+input[type="button"][name="action"]:hover {
+	background: #5a6470;
+}
+
+input[type="text"][name="budget"] {
+	float: left;
+	height: 75%;
+	border: 5px solid black;
+	background: transparent;
+	color: black;
+	padding: 10px; /* spazio intorno al testo */
+	font-size: 20px; /* dimensione del testo */
+	text-align: right;
+	font-weight: bold;
+	cursor: default;
+	user-select: none;
 }

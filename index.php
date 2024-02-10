@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['id_utente'] = $row["id_utente"];
                 break;
             }
-            header("Location: game.php");
+            header("Location: user_connection.php");
         }
         else {
             echo '<script>showError("Identificazione non riuscita: nome utente o password errati")</script>';

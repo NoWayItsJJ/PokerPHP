@@ -5,6 +5,8 @@ if(!isset($_SESSION['email']) || !isset($_SESSION['password']) || !isset($_SESSI
 }
 
 $id = $_SESSION['id_utente'];
+$budget = $_SESSION['budget'];
+echo "<script>console.log('$budget')</script>";
 
 $servername = "localhost";
 $username = "root"; //Sostituisci con il tuo nome utente del database
@@ -109,6 +111,17 @@ for ($i = 0; $i < 5; $i++) {
                         <div class="carta"><img src="./carte/<?php echo $carteGiocatore4[1]; //($id === 4) ? $carteGiocatore4[1] : "back.gif"; ?>" /></div>
                     </div>
                 </div>
+            </div>
+            <div class="bottom-container">
+                <div class="bottom-side">
+                    <input type="text" name="budget" value="<?php echo $budget?>🟡" readonly disabled>
+                </div>
+                <div class="bottom-center">
+                    <input type="button" name="action" value="Fold" onclick="location.href='fold.php'">
+                    <input type="button" name="action" value="Check" onclick="location.href='check.php'">
+                    <input type="button" name="action" value="Raise" onclick="location.href='raise.php'">
+                </div>
+                <div class="bottom-side"></div>
             </div>
         </div>
         <?php //echo "<h3>Vincitore: " . $vincitore . "</h3>"; ?>
